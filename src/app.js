@@ -20,12 +20,12 @@ window.onload = function() {
   let num = Math.random();
   let excusa = "";
   excusa =
-    who[Math.round(num * who.length)] +
+    who[Math.round(num * (who.length - 1))] +
     " " +
-    action[Math.round(num * action.length)] +
+    action[Math.round(num * (action.length - 1))] +
     " " +
-    what[Math.round(num * what.length)] +
+    what[Math.round(num * (what.length - 1))] +
     " " +
-    when[Math.round(num * when.length)];
+    when[Math.round(num * (when.length - 1))];
   document.getElementById("excuse").innerHTML = excusa;
 };
