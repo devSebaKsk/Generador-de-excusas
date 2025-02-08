@@ -7,6 +7,9 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //your code below
+
+  //Variables
+  let excusa = "";
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
   let what = ["my homework", "my phone", "the car"];
@@ -17,15 +20,20 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-  let num = Math.random();
-  let excusa = "";
+  //Funcion de numero aletorio
+  const numeroRandom = function(arr) {
+    let num = Math.random();
+    return Math.round(num * (arr.length - 1));
+  };
+  //creacion de excusa
   excusa =
-    who[Math.round(num * (who.length - 1))] +
+    who[numeroRandom(who)] +
     " " +
-    action[Math.round(num * (action.length - 1))] +
+    action[numeroRandom(action)] +
     " " +
-    what[Math.round(num * (what.length - 1))] +
+    what[numeroRandom(what)] +
     " " +
-    when[Math.round(num * (when.length - 1))];
+    when[numeroRandom(when)];
+
   document.getElementById("excuse").innerHTML = excusa;
 };
